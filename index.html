@@ -4,6 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#043F3D">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="CarbSnap Thailand">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./icons/icon-192.png">
+<link rel="apple-touch-icon" href="./icons/icon-192.png">
 <meta name="description" content="CarbSnap Thailand - Premium diabetes-friendly carbohydrate tracker">
 <title>CarbSnap Thailand — Premium Nutrition Dashboard</title>
 <style>
@@ -89,6 +96,8 @@ function renderHistory(){$('historyCount').textContent=meals.length+' ราย�
 document.querySelectorAll('[data-target]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-target]').forEach(x=>x.classList.toggle('active',x.dataset.target===b.dataset.target));$(b.dataset.target).scrollIntoView({behavior:'smooth',block:'start'})});
 $('goalBtn').onclick=()=>{let v=prompt('ระบุเป้าหมายคาร์โบไฮเดรตต่อวันเป็นกรัม ตามคำแนะนำจากทีมรักษา');if(v!==null&&Number(v)>0){goal=Number(v);$('goalDisplay').textContent=goal+' g';renderHistory();toast('บันทึกเป้าหมายในหน้าจอนี้แล้ว')}};
 $('helpBtn').onclick=()=>alert('วิธีใช้งาน\\n1. ถ่ายรูปหรือเลือกรูปอาหาร\\n2. กดวิเคราะห์อาหาร\\n3. ตรวจสอบรายการและแก้ไขน้ำหนัก\\n4. ยืนยันและบันทึก\\n\\nหมายเหตุ: UI นี้ยังไม่เชื่อมต่อ AI จริง');
+
+if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}))}
 </script>
 </body>
 </html>
