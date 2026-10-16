@@ -1,12 +1,10 @@
 {
   "name": "CarbSnap Thailand",
   "short_name": "CarbSnap",
-  "description": "ผู้ช่วยติดตามและประเมินคาร์โบไฮเดรตจากอาหาร",
-  "lang": "th",
+  "description": "ผู้ช่วยประเมินคาร์โบไฮเดรตจากอาหาร",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "orientation": "portrait",
   "background_color": "#F6F7F5",
   "theme_color": "#043F3D",
   "icons": [
