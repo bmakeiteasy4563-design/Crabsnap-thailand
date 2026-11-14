@@ -1,4 +1,4 @@
-const CACHE_NAME = "carbsnap-thailand-v2";
+const CACHE_NAME = "carbsnap-thailand-v3";
 
 self.addEventListener("install", (event) => {
   self.skipWaiting();
